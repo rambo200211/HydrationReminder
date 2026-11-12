@@ -2,7 +2,7 @@
 
 A mobile app built with **React Native** and **Expo (SDK 58)** for the Mobile Application Development course, Practical Tutorial 06: *Local Notifications & Tab Navigation in Expo*.
 
-**Developer:** [Your Name] ([Your Index Number])
+**Developer:** [U.K.R.Bhagya] ([PS/2022/229])
 **Department of Statistics & Computer Science, University of Kelaniya**
 **Academic Year 2024/2025 (Semester 2)**
 
