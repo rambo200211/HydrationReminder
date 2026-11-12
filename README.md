@@ -1,56 +1,81 @@
-# Welcome to your Expo app 👋
+# Hydration Reminder App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile app built with **React Native** and **Expo (SDK 58)** for the Mobile Application Development course, Practical Tutorial 06: *Local Notifications & Tab Navigation in Expo*.
 
-## Get started
+**Developer:** [Your Name] ([Your Index Number])
+**Department of Statistics & Computer Science, University of Kelaniya**
+**Academic Year 2024/2025 (Semester 2)**
 
-1. Install dependencies
+## What We Built
 
+The Hydration Reminder App reminds the user to drink water at regular intervals using **local notifications**. It has three tabs, built with Expo Router.
+
+### Tab 1: Reminder
+- The user can type a **custom reminder message**.
+- The user can set the **reminder interval in minutes**.
+- **Start Reminders** schedules a repeating local notification.
+- **Stop Reminders** cancels all scheduled notifications.
+- A status indicator shows whether reminders are **Active 🟢** or **Inactive 🔴**.
+
+### Tab 2: Tips
+- A static page that explains the benefits of staying hydrated.
+
+### Tab 3: About
+- Information about the app and its developer.
+
+## Concepts Covered
+
+- **Local vs. Push notifications:** local notifications are scheduled and triggered on the device and need no internet connection or server.
+- **Permissions:** `Notifications.requestPermissionsAsync()` asks the user for notification permission.
+- **Foreground handling:** `Notifications.setNotificationHandler` shows notifications even while the app is open.
+- **Scheduling:** `Notifications.scheduleNotificationAsync()` with a repeating `TIME_INTERVAL` trigger.
+- **Cancelling:** `Notifications.cancelAllScheduledNotificationsAsync()` stops all reminders.
+- **Tab navigation:** a bottom tab layout using `expo-router`.
+- **Rules of Hooks:** `useEffect` and `useState` are called at the top level of the component.
+
+## Project Structure
+
+```
+HydrationReminder/
+├── app/
+│   ├── _layout.tsx    # Tab navigation + global notification handler
+│   ├── index.tsx      # Reminder tab (core notification logic)
+│   ├── tips.tsx       # Tips tab
+│   └── about.tsx      # About tab
+├── Output_Screens/    # Screenshots of the app output
+└── README.md
+```
+
+## Technologies Used
+
+- React Native
+- Expo SDK 58
+- Expo Router
+- expo-notifications
+- TypeScript
+
+## How to Run
+
+1. Install dependencies:
    ```bash
    npm install
    ```
-
-2. Start the app
-
+2. Start the development server and clear the cache:
    ```bash
-   npx expo start
+   npx expo start -c
    ```
+3. Open the **Expo Go** app on a **physical device** and scan the QR code.
+4. Allow notifications when prompted.
+5. Set the interval to 1 minute, tap **Start Reminders**, and go to the home screen to see the notification arrive.
 
-In the output, you'll find options to open the app in a
+> Note: Local notifications work in Expo Go. Testing on a physical device is recommended, as emulators may not show notification UI or sounds correctly.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Output Screenshots
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+All screenshots are saved in the `Output_Screens` folder:
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Notification permission prompt
+- Reminder tab (inactive and active states)
+- Notification received (background and foreground)
+- Tips tab
+- About tab
